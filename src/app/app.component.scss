@@ -1,0 +1,37 @@
+@import "../master";
+
+.wrapper {
+  background-color: $primary-color;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  ul {
+    display: flex;
+    &.logo {
+      font-family: "Allerta Stencil", sans-serif;
+    }
+    &.social {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+    li {
+      list-style: none;
+      display: block;
+      padding: 10px;
+      flex-basis: 100px;
+      a {
+        text-align: center;
+        text-decoration: none;
+        color: #f2f3f4;
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import "../../master";
+
+header {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    .box {
+      white-space: nowrap;
+      animation: opacity 10s infinite alternate;
+      .moto {
+        font-size: 26px;
+        top: -38%;
+        position: relative;
+      }
+    }
+    min-height: 300px;
+    background: $primary-color;
+    color: $secondary-color;
+    text-align: center;
+    line-height: 300px;
+    font-size: 80px;
+    font-family: "Allerta Stencil", sans-serif;
+    &:after {
+      content: "";
+      position: absolute;
+      min-height: 300px;
+      background: $secondary-color;
+      width: 110%;
+      transform: rotate(-5deg);
+      top: 60%;
+      left: -5%;
+    }
+  }
+}
+
+@include opacity-move;
+
+@media screen and (max-width: 760px) {
+  header {
+    .content {
+      .box {
+        white-space: nowrap;
+        animation: opacity 5s infinite alternate ease-in-out;
+        font-size: 50px;
+        .moto {
+          font-size: 16px;
+          top: -38%;
+          position: relative;
+        }
+      }
+    }
+  }
+  @include opacity-glow;
+}
