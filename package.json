@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot"
+    "postinstall": "ng build --aot",
+    "deploy": "git add . && git commit -m 'Files added' && git push origin gh-pages"
   },
   "private": true,
   "dependencies": {
