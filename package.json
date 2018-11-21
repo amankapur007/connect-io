@@ -9,7 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot",
-    "deploy": "git add . && git commit -m 'Files added' && git push origin gh-pages"
+    "predeploy": "git checkout gh-pages",
+    "deploy": "ng build --prod --output-path docs --base-href connect-io > build.log",
+    "postdeploy": "git add . && git commit -m 'Files added'"
   },
   "private": true,
   "dependencies": {

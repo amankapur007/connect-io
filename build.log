@@ -1,8 +1,8 @@
-[37m
-[0mDate: [1m[37m2018-11-21T02:03:58.460Z[39m[22m
-Hash: [1m[37me65c21976c51848448d8[39m[22m
-Time: [1m[37m47767[39m[22mms
-chunk {[1m[33m0[39m[22m} [1m[32mruntime.ec2944dd8b20ec099bf3.js[39m[22m (runtime) 1.41 kB [1m[33m[entry][39m[22m[1m[32m [rendered][39m[22m
-chunk {[1m[33m1[39m[22m} [1m[32mmain.793b366ea0c03890759f.js[39m[22m (main) 256 kB [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m
-chunk {[1m[33m2[39m[22m} [1m[32mpolyfills.c6871e56cb80756a5498.js[39m[22m (polyfills) 37.5 kB [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m
-chunk {[1m[33m3[39m[22m} [1m[32mstyles.e04d557160eb46336b4e.css[39m[22m (styles) 57 bytes [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m[0m[39m
+
+Date: 2018-11-21T02:25:07.897Z
+Hash: e65c21976c51848448d8
+Time: 29486ms
+chunk {0} runtime.ec2944dd8b20ec099bf3.js (runtime) 1.41 kB [entry] [rendered]
+chunk {1} main.793b366ea0c03890759f.js (main) 256 kB [initial] [rendered]
+chunk {2} polyfills.c6871e56cb80756a5498.js (polyfills) 37.5 kB [initial] [rendered]
+chunk {3} styles.e04d557160eb46336b4e.css (styles) 57 bytes [initial] [rendered]
