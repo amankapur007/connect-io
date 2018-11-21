@@ -1,7 +1,7 @@
 
-Date: 2018-11-21T02:25:07.897Z
+Date: 2018-11-21T02:36:38.144Z
 Hash: e65c21976c51848448d8
-Time: 29486ms
+Time: 24361ms
 chunk {0} runtime.ec2944dd8b20ec099bf3.js (runtime) 1.41 kB [entry] [rendered]
 chunk {1} main.793b366ea0c03890759f.js (main) 256 kB [initial] [rendered]
 chunk {2} polyfills.c6871e56cb80756a5498.js (polyfills) 37.5 kB [initial] [rendered]
