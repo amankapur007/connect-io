@@ -11,7 +11,7 @@
     "postinstall": "ng build --aot",
     "predeploy": "git checkout gh-pages",
     "deploy": "ng build --prod --output-path docs --base-href connect-io > build.log",
-    "postdeploy": "git add . && git commit -m 'Files added'"
+    "git": "git add . && git commit -m"
   },
   "private": true,
   "dependencies": {
