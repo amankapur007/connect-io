@@ -1,7 +1,7 @@
 @import "../master";
 
 .wrapper {
-  background-color: $primary-color;
+  background-color: transparent;
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -28,7 +28,7 @@ nav {
       a {
         text-align: center;
         text-decoration: none;
-        color: #f2f3f4;
+        color: $secondary-color;
         font-size: 15px;
         font-weight: bold;
       }
