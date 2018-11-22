@@ -8,3 +8,62 @@
     </div>
   </div>
 </header>
+<section>
+  <div class="container">
+    <!--
+      <section class="signup connect"><app-signup></app-signup></section>
+      <section class="login connect"><app-login></app-login></section>
+    -->
+    <div class="circle">
+      <div class="half-upper">
+        <div
+          class="text"
+          data-toggle="modal"
+          data-target="#myModal"
+          (click)="whichEvent('login')"
+        >
+          Login
+        </div>
+      </div>
+      <div class="half-lower">
+        <div
+          class="text"
+          data-toggle="modal"
+          data-target="#myModal"
+          (click)="whichEvent('signup')"
+        >
+          Sign up
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title" *ngIf="login; else: signup">Login</h4>
+        <ng-template #signup><h4 class="modal-title">Sign Up</h4></ng-template>
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" *ngIf="login; else: signupbody">
+        <app-login></app-login>
+      </div>
+      <ng-template #signupbody> <app-signup></app-signup> </ng-template>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

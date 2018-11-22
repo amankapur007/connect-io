@@ -1,0 +1,26 @@
+@import "../../master";
+
+.wrapper {
+  padding: 5%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.connect {
+  flex-basis: 140px;
+  flex-grow: 1;
+  h3 {
+    line-height: 60px;
+  }
+  .content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    .box {
+      flex-basis: 74%;
+      flex-wrap: wrap;
+    }
+  }
+}

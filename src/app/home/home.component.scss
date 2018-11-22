@@ -19,7 +19,12 @@ header {
       }
     }
     min-height: 300px;
-    background: $primary-color;
+    background: linear-gradient(
+      to bottom right,
+      $primary-color,
+      #f5b041,
+      #fef5e7
+    );
     color: $secondary-color;
     text-align: center;
     line-height: 300px;
@@ -29,7 +34,7 @@ header {
       content: "";
       position: absolute;
       min-height: 300px;
-      background: $secondary-color;
+      background: white;
       width: 110%;
       transform: rotate(-5deg);
       top: 60%;
@@ -37,9 +42,7 @@ header {
     }
   }
 }
-
 @include opacity-move;
-
 @media screen and (max-width: 760px) {
   header {
     .content {
@@ -56,4 +59,57 @@ header {
     }
   }
   @include opacity-glow;
+}
+section {
+  position: relative;
+  margin-top: -200px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.connect {
+  flex-basis: 200px;
+  flex-grow: 1;
+  min-height: 100px;
+  flex-wrap: wrap;
+  margin: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+.circle {
+  text-align: center;
+  font-size: 28px;
+  font-family: "Allerta Stencil", sans-serif;
+}
+.circle {
+  transition: all 3s;
+  transform: rotate(0deg);
+}
+.circle:hover {
+  transform: rotate(180deg);
+}
+.half-upper {
+  width: 200px;
+  height: 100px;
+  background-color: $primary-color;
+  color: white;
+  border-top-left-radius: 110px;
+  border-top-right-radius: 110px;
+  box-shadow: 10px 1px 10px #aaaaaa;
+}
+.half-lower {
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  color: $primary-color;
+  border-top-left-radius: 110px;
+  border-top-right-radius: 110px;
+  transform: rotate(180deg);
+  box-shadow: -10px 1px 10px #aaaaaa;
+}
+.text {
+  line-height: 100px;
+  cursor: pointer;
 }
