@@ -19,12 +19,7 @@ header {
       }
     }
     min-height: 300px;
-    background: linear-gradient(
-      to bottom right,
-      $primary-color,
-      #f5b041,
-      #fef5e7
-    );
+    @include mixcolor;
     color: $secondary-color;
     text-align: center;
     line-height: 300px;
@@ -93,7 +88,7 @@ section {
 .half-upper {
   width: 200px;
   height: 100px;
-  background-color: $primary-color;
+  @include mixcolor;
   color: white;
   border-top-left-radius: 110px;
   border-top-right-radius: 110px;
@@ -103,7 +98,7 @@ section {
   width: 200px;
   height: 100px;
   background-color: white;
-  color: $primary-color;
+  @include mixtext
   border-top-left-radius: 110px;
   border-top-right-radius: 110px;
   transform: rotate(180deg);
