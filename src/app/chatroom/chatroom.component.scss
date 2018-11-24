@@ -1,0 +1,39 @@
+@import "../../master";
+.wrapper {
+  display: flex;
+  @include mixcolor;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.box {
+  margin-top: 45px;
+  margin-bottom: 10px;
+  min-height: 91vh;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 300px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 1px solid lightgray;
+  border-radius: 1%;
+  height: auto;
+  z-index: 1;
+  &.user {
+    max-width: 30%;
+    background: rgba(46, 64, 83, 1);
+  }
+  &.messages {
+    background: transparent;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .box {
+    margin-top: 0px;
+    &.user {
+      margin-top: 45px;
+      max-width: 100%;
+    }
+  }
+}

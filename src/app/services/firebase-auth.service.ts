@@ -12,4 +12,15 @@ export class FirebaseAuthService {
   ): Promise<firebase.auth.UserCredential> {
     return firebase.auth().createUserWithEmailAndPassword(email, password);
   }
+
+  login(
+    email: string,
+    password: string
+  ): Promise<firebase.auth.UserCredential> {
+    return firebase.auth().signInWithEmailAndPassword(email, password);
+  }
+
+  getCurrentUser(): firebase.auth.Auth {
+    return firebase.auth();
+  }
 }

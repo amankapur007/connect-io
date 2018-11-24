@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  .box {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    .prof {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+      flex-direction: row;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+    .detail {
+      margin-left: 20px;
+    }
+    .text {
+      padding: 10px;
+      line-height: 75px;
+      word-break: break-word;
+    }
+  }
+}
+
+img {
+  height: 150px;
+  width: 150px;
+  border: 1px solid;
+  border-radius: 50%;
+}

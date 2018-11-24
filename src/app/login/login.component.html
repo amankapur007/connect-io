@@ -1,12 +1,13 @@
 <div class="wrapper">
   <div class="connect">
-    <div class="form-row">
+    <form class="form-row" [formGroup]="loginForm" (ngSubmit)="login()">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>
         <input
           type="email"
           class="form-control"
           id="inputEmail4"
+          formControlName="email"
           placeholder="Email"
         />
       </div>
@@ -16,11 +17,12 @@
           type="password"
           class="form-control"
           id="inputPassword4"
+          formControlName="password"
           placeholder="Password"
         />
       </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
   </div>
   <div class="connect">
     <div class="content">
