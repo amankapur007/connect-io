@@ -1,14 +1,15 @@
 <div class="wrapper">
   <div class="profile box">
-    <div class="prof">
+    <div class="prof" *ngIf="user">
       <div class=" img">
-        <img [src]="profile_pic" alt="" *ngIf="profile_pic; else: default" />
+        <img [src]="user.photoUrl" alt="" *ngIf="profile_pic; else: default" />
         <ng-template #default
           ><i class="fa fa-user" aria-hidden="true"></i>
         </ng-template>
       </div>
       <div class="detail">
-        <kbd class="text">Aman Kumar Kapur</kbd><br />
+        <kbd class="text">{{ user | profile: "name" }}</kbd
+        ><br />
         <div class="more-detail">
           <kbd>Edit <i class="fa fa-pencil-square" aria-hidden="true"></i></kbd>
         </div>

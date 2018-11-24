@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { FirebaseAuthService } from "../services/firebase-auth.service";
 
 @Component({
   selector: "app-users",
@@ -7,10 +8,14 @@ import { Component, OnInit } from "@angular/core";
 })
 export class UsersComponent implements OnInit {
   profile_pic = null;
-  constructor() {}
+  user: firebase.User;
+  constructor(private auth: FirebaseAuthService) {}
 
   ngOnInit() {
-    this.profile_pic =
-      "https://media.licdn.com/dms/image/C5103AQE8-fpRDW8tVw/profile-displayphoto-shrink_200_200/0?e=1548288000&v=beta&t=TamjnpQtdUloXtUVgJTwFD--X5eoEDjL4cPdtGBPxOA";
+    this.auth.getCurrentUser().onAuthStateChanged(res => {
+      if (res) {
+        this.user = res;
+      }
+    });
   }
 }

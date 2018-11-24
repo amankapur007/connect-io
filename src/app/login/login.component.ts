@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { FirebaseAuthService } from "../services/firebase-auth.service";
 import {
@@ -13,6 +13,7 @@ import { DataserviceService } from "../services/dataservice.service";
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
+  @Output() modal = new EventEmitter();
   loginForm: FormGroup;
   constructor(
     private fb: FormBuilder,
@@ -33,6 +34,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         var user: firebase.User = res.user;
         this.dataService.setData(user);
+        this.modal.emit();
         this.route.navigateByUrl("/chat");
       })
       .catch(err => {

@@ -1,4 +1,7 @@
 <div class="wrapper">
-  <div class="user box"><app-users></app-users></div>
+  <div class="collapse">
+    <button class="btn btn-light" (click)="toggle()">User List</button>
+  </div>
+  <div class="user box" #userlist><app-users></app-users></div>
   <div class="messages box"><app-messages></app-messages></div>
 </div>
