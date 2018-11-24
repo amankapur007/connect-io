@@ -2,10 +2,10 @@
   <div class="profile box">
     <div class="prof">
       <div class=" img">
-        <img
-          src="https://media.licdn.com/dms/image/C5103AQE8-fpRDW8tVw/profile-displayphoto-shrink_200_200/0?e=1548288000&v=beta&t=TamjnpQtdUloXtUVgJTwFD--X5eoEDjL4cPdtGBPxOA"
-          alt=""
-        />
+        <img [src]="profile_pic" alt="" *ngIf="profile_pic; else: default" />
+        <ng-template #default
+          ><i class="fa fa-user" aria-hidden="true"></i>
+        </ng-template>
       </div>
       <div class="detail">
         <kbd class="text">Aman Kumar Kapur</kbd><br />

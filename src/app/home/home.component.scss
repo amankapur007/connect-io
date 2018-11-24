@@ -98,8 +98,7 @@ section {
   width: 200px;
   height: 100px;
   background-color: white;
-  @include mixtext
-  border-top-left-radius: 110px;
+  @include mixtext border-top-left-radius: 110px;
   border-top-right-radius: 110px;
   transform: rotate(180deg);
   box-shadow: -10px 1px 10px #aaaaaa;

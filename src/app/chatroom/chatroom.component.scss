@@ -4,12 +4,13 @@
   @include mixcolor;
   flex-wrap: wrap;
   position: relative;
+  top: 60px;
 }
 
 .box {
-  margin-top: 45px;
+  margin-top: 2px;
   margin-bottom: 10px;
-  min-height: 91vh;
+  min-height: 89vh;
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 300px;

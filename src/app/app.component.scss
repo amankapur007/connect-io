@@ -1,7 +1,7 @@
 @import "../master";
 
 .wrapper {
-  background-color: transparent;
+  @include mixcolor;
   position: fixed;
   width: 100%;
   z-index: 2;
@@ -24,7 +24,6 @@ nav {
       list-style: none;
       display: block;
       padding: 10px;
-      flex-basis: 100px;
       a {
         text-align: center;
         text-decoration: none;
