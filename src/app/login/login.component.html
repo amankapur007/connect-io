@@ -1,5 +1,22 @@
 <div class="wrapper">
   <div class="connect">
+    <div class="notes" *ngIf="message">
+      <div class="alert alert-success">
+        <strong>{{ message }}</strong>
+      </div>
+    </div>
+    <div class="notes" *ngIf="error">
+      <br />
+      <div *ngIf="error" class="alert alert-danger alert-dismissible fade show">
+        <strong>{{ error }}</strong>
+      </div>
+    </div>
+    <div class="notes" *ngIf="emailVerification">
+      <button class="btn btn-dark btn-sm" (click)="resendLink()">
+        <i class="fa fa-envelope-open" aria-hidden="true"></i>
+        {{ emailVerification }} , Resend the link
+      </button>
+    </div>
     <form class="form-row" [formGroup]="loginForm" (ngSubmit)="login()">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { FirebaseAuthService } from "../services/firebase-auth.service";
 import { FirebaseUtilitiesService } from "../services/firebase-utilities.service";
+import { UserService } from "../services/user/user.service";
 
 @Component({
   selector: "app-signup",
@@ -16,7 +17,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: FirebaseAuthService,
-    private commonUtilities: FirebaseUtilitiesService
+    private commonUtilities: FirebaseUtilitiesService,
+    private userService: UserService
   ) {}
 
   ngOnInit() {
@@ -40,14 +42,13 @@ export class SignupComponent implements OnInit {
     this.authService
       .signUp(this.signUpForm.value.email, this.signUpForm.value.password)
       .then(res => {
-        console.log(res.user);
         var user = res.user;
+        this.userService.storeToUsersCollection(this.signUpForm.value.email);
         user
           .sendEmailVerification()
           .then(() => {
             this.alert = "Verification mail has been send to your account";
             this.mailSend = true;
-            console.log(res);
           })
           .catch(err => {
             this.error = err.message;

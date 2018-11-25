@@ -14,6 +14,7 @@ import { UsersComponent } from "./users/users.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { ProfilePipe } from "./pipes/profile.pipe";
 import * as firebase from "firebase";
+import { environment } from "src/environments/environment";
 
 @NgModule({
   declarations: [
@@ -38,14 +39,7 @@ import * as firebase from "firebase";
 })
 export class AppModule {
   constructor() {
-    var config = {
-      apiKey: "AIzaSyDhDMsfBQh9uJI3YY1mFMKKyqhq_1TOgic",
-      authDomain: "connect-io-6edb3.firebaseapp.com",
-      databaseURL: "https://connect-io-6edb3.firebaseio.com",
-      projectId: "connect-io-6edb3",
-      storageBucket: "connect-io-6edb3.appspot.com",
-      messagingSenderId: "1059657611617"
-    };
+    var config = environment.connection;
     firebase.initializeApp(config);
   }
 }

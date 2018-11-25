@@ -14,12 +14,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     var auth = this.authService.getCurrentUser().onAuthStateChanged(user => {
-      if (user) {
+      if (user && user.emailVerified) {
         this.loggedUser = user;
         console.log(this.loggedUser);
       } else {
         this.loggedUser = null;
-        console.log("null");
       }
     });
   }

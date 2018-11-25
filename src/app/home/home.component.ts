@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     this.auth.getCurrentUser().onAuthStateChanged(res => {
       console.log(res);
 
-      if (res) {
+      if (res && res.emailVerified) {
         this.route.navigateByUrl("/chat");
       }
     });

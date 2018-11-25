@@ -7,12 +7,17 @@ import {
   Router
 } from "@angular/router";
 import { DataserviceService } from "../services/dataservice.service";
+import { StringifyOptions } from "querystring";
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
+  user: firebase.User;
+  message: string;
+  error: string;
+  emailVerification: string;
   @Output() modal = new EventEmitter();
   loginForm: FormGroup;
   constructor(
@@ -33,12 +38,29 @@ export class LoginComponent implements OnInit {
       .then(res => {
         console.log(res);
         var user: firebase.User = res.user;
-        this.dataService.setData(user);
-        this.modal.emit();
-        this.route.navigateByUrl("/chat");
+        this.user = user;
+        if (user && user.emailVerified) {
+          this.dataService.setData(user);
+          this.modal.emit();
+          this.route.navigateByUrl("/chat");
+        } else {
+          this.emailVerification = "Request to verify your account";
+          console.log("Verify you account");
+        }
       })
       .catch(err => {
         console.log(err);
+      });
+  }
+
+  resendLink() {
+    this.user
+      .sendEmailVerification()
+      .then(res => {
+        this.message = "Email has been sent.";
+      })
+      .catch(err => {
+        this.error = err.message;
       });
   }
 }
