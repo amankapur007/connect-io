@@ -1,0 +1,54 @@
+@import "../../master";
+.wrapper {
+  display: flex;
+  @include mixcolor;
+  flex-wrap: wrap;
+  position: relative;
+  top: 60px;
+}
+
+.collapse {
+  display: none;
+}
+.box {
+  margin-top: 2px;
+  margin-bottom: 10px;
+  min-height: 89vh;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 300px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 1px solid lightgray;
+  border-radius: 1%;
+  height: auto;
+  z-index: 1;
+  &.user {
+    display: block;
+    max-width: 30%;
+    background: rgba(46, 64, 83, 1);
+  }
+  &.messages {
+    background: transparent;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .collapse {
+    display: flex;
+    flex-grow: 1;
+    margin: 10px;
+    z-index: 2;
+    flex-direction: column;
+    width: 100%;
+  }
+  .box {
+    margin-top: 0px;
+    min-height: 81vh;
+    &.user {
+      margin-top: 10px;
+      max-width: 100%;
+      display: none;
+    }
+  }
+}

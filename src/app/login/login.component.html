@@ -1,12 +1,30 @@
 <div class="wrapper">
-  <form class="connect">
-    <div class="form-row">
+  <div class="connect">
+    <div class="notes" *ngIf="message">
+      <div class="alert alert-success">
+        <strong>{{ message }}</strong>
+      </div>
+    </div>
+    <div class="notes" *ngIf="error">
+      <br />
+      <div *ngIf="error" class="alert alert-danger alert-dismissible fade show">
+        <strong>{{ error }}</strong>
+      </div>
+    </div>
+    <div class="notes" *ngIf="emailVerification">
+      <button class="btn btn-dark btn-sm" (click)="resendLink()">
+        <i class="fa fa-envelope-open" aria-hidden="true"></i>
+        {{ emailVerification }} , Resend the link
+      </button>
+    </div>
+    <form class="form-row" [formGroup]="loginForm" (ngSubmit)="login()">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>
         <input
           type="email"
           class="form-control"
           id="inputEmail4"
+          formControlName="email"
           placeholder="Email"
         />
       </div>
@@ -16,12 +34,13 @@
           type="password"
           class="form-control"
           id="inputPassword4"
+          formControlName="password"
           placeholder="Password"
         />
       </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-  </form>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
   <div class="connect">
     <div class="content">
       <div class="box">

@@ -1,5 +1,7 @@
-$primary-color: #3498db;
-$secondary-color: #f2f3f4;
+$primary-color: #3498DB;
+$secondary-color: Black;
+$primary-color-2:#1ABC9C;
+
 @mixin opacity-glow {
   @keyframes opacity {
     from {
@@ -29,4 +31,20 @@ $secondary-color: #f2f3f4;
       left: 10%;
     }
   }
+}
+
+@mixin mixcolor(){
+    background: linear-gradient(
+      to right,
+      $primary-color,
+      $primary-color-2
+    )
+}
+
+@mixin mixtext(){
+    color:linear-gradient(
+      to right,
+      $primary-color,
+      $primary-color-2
+    )
 }

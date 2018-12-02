@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <div class="messages box"></div>
+  <div class="input box">
+    <form [formGroup]="messageForm">
+      <div class="form-row align-items-center">
+        <div class="col-auto">
+          <label class="sr-only" for="inlineFormInputGroup">Message</label>
+          <div class="input-group mb-3">
+            <textarea
+              type="text"
+              class="form-control"
+              id="inlineFormInputGroup"
+              formControlName="message"
+              placeholder="Type message"
+            ></textarea>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
